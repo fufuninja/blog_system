@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'blog',
+    'registration',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -103,7 +105,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
 
+EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS= True
+EMAIL_PORT= 587
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_PASSWORD=''
+EMAIL_HOST_USER='hungngiap@gmail.com'
+SERVER_EMAIL='hungngiap@gmail.com'
+DEFAULT_FROM_EMAIL='Confession Page'
+                               
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
